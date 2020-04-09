@@ -1,13 +1,18 @@
+
 import { takeEvery, all } from 'redux-saga/effects';
 import { InputAction, INPUT } from './action';
 
 //saga 작성
+//saga 코루틴 작성
 export default function* inputSaga() {
-    yield all([takeEvery(INPUT, input$)]);
+    yield all([
+        takeEvery(INPUT, input$)
+    ]);
 }
 
-// 액션 전인가? 후인가? 비동기 처리 해야할 행동이 있으면 정의
-// eslint-disable-next-line require-yield
+
+//요건 모르겠넹.....
+//비동기 처리할 행동있음 정의
 function* input$(action: InputAction) {
     const { type, payload } = action;
     console.log(type);

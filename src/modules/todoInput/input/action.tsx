@@ -1,14 +1,16 @@
-//redux type과 액션 정하기
+//redux 만들기 
 
-//타입
+
+
+//1. type 정의
 export const INPUT = 'INPUT';
 
-//액션정의
-
+//2. action 정의
 export interface InputAction {
     type: typeof INPUT;
-    payload: { value: string };
+    payload: { value: string; };
 }
+
 
 export const input = (value: string): InputAction => ({
     type: INPUT,

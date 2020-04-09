@@ -1,21 +1,24 @@
-//타입
+
+//기본값 
 export const TODO_INSERT_REQUEST = 'TODO_INSERT_REQUEST';
 
-export interface TodoInsertRQAction {
+export interface TodoInsertReqAction {
     type: typeof TODO_INSERT_REQUEST;
-    payload: { value: string };
+    payload: { value: string; };
 }
 
-export const todoInsertRQ = (value: string): TodoInsertRQAction => ({
+export const todoInsertReq = (value: string): TodoInsertReqAction => ({
     type: TODO_INSERT_REQUEST,
     payload: { value: value }
 });
+
+//작성
 
 export const TODO_INSERT = 'TODO_INSERT';
 
 export interface TodoInsertAction {
     type: typeof TODO_INSERT;
-    payload: { value: string };
+    payload: { value: string; };
 }
 
 export const todoInsert = (value: string): TodoInsertAction => ({
@@ -23,11 +26,13 @@ export const todoInsert = (value: string): TodoInsertAction => ({
     payload: { value: value }
 });
 
+//추가
+
 export const TODO_TOGGLE = 'TODO_TOGGLE';
 
 export interface TodoToggleAction {
     type: typeof TODO_TOGGLE;
-    payload: { id: number };
+    payload: { id: number; };
 }
 
 export const todoToggle = (id: number): TodoToggleAction => ({
@@ -39,7 +44,7 @@ export const TODO_REMOVE = 'TODO_REMOVE';
 
 export interface TodoRemoveAction {
     type: typeof TODO_REMOVE;
-    payload: { id: number };
+    payload: { id: number; };
 }
 
 export const todoRemove = (id: number): TodoRemoveAction => ({
@@ -47,8 +52,5 @@ export const todoRemove = (id: number): TodoRemoveAction => ({
     payload: { id: id }
 });
 
-export type TodoActioin =
-    | TodoInsertAction
-    | TodoToggleAction
-    | TodoRemoveAction
-    | TodoInsertRQAction;
+
+export type TodoAction = TodoInsertReqAction | TodoInsertAction | TodoToggleAction | TodoRemoveAction;
